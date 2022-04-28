@@ -8,7 +8,7 @@ services:
     ports:
       - "3000:3000"
     networks:
-      - nodemongo-network
+    - nodemongo-network
     depends_on: 
       - mongodb
       
@@ -17,7 +17,8 @@ services:
     restart: always
     image: mongo
     networks:
-      - nodemongo-network
+    - nodemongo-network
 
 networks: 
   nodemongo-network:
+    driver: bridge
