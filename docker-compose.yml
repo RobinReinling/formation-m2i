@@ -16,6 +16,8 @@ services:
     container_name: mongodb
     restart: always
     image: mongo
+    ports:
+      - 27017:27017
     networks:
     - nodemongo-network
 
