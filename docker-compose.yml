@@ -1,0 +1,22 @@
+services:
+  node:
+    container_name: nodeapi
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    networks:
+      - nodemongo-network
+    depends_on: 
+      - mongodb
+      
+  mongodb:
+    container_name: mongodb
+    restart: always
+    image: mongo
+    networks:
+      - nodemongo-network
+
+networks:
+  nodemongo-network:
+    driver: bridge
