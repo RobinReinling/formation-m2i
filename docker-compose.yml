@@ -17,6 +17,5 @@ services:
     networks:
       - nodemongo-network
 
-networks:
+networks: 
   nodemongo-network:
-    driver: bridge
